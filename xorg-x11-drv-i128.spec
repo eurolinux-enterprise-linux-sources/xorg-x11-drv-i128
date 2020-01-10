@@ -4,8 +4,8 @@
 
 Summary:   Xorg X11 i128 video driver
 Name:      xorg-x11-drv-i128
-Version:   1.3.4
-Release:   1%{?dist}
+Version:   1.3.6
+Release:   3%{?dist}
 URL:       http://www.x.org
 License:   MIT
 Group:     User Interface/X Hardware Support
@@ -18,7 +18,7 @@ Patch0:	    i128-1.2.0-1600sw-range-hack.patch
 
 ExcludeArch: s390 s390x
 
-BuildRequires: xorg-x11-server-sdk >= 1.4.99.1
+BuildRequires: xorg-x11-server-devel >= 1.10.99.902
 
 Requires:  hwdata
 Requires:  Xorg %(xserver-sdk-abi-requires ansic)
@@ -58,6 +58,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man4/i128.4*
 
 %changelog
+* Tue Aug 29 2012 Jerome Glisse <jglisse@redhat.com> 1.3.6-3
+- Resolves: #835234
+
+* Wed Aug 22 2012 airlied@redhat.com - 1.3.6-2
+- rebuild for server ABI requires
+
+* Mon Aug 06 2012 Jerome Glisse <jglisse@redhat.com> 1.3.6-1
+- latest upstream release 1.3.6
+
 * Tue Jun 28 2011 Ben Skeggs <bskeggs@redhat.com> 1.3.4-1
 - upstream release 1.3.4
 
